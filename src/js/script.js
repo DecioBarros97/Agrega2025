@@ -41,6 +41,14 @@ themeToggleBtn.addEventListener('click', function() {
 });
 
 
-    window.onload = function () {
-        window.scrollTo(0, 0);
-    };
+window.onload = function () {
+    // Remove âncoras da URL (exemplo: site.com/#about -> site.com/)
+    if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+    }
+
+    // Rola para a seção com id="home"
+    setTimeout(() => {
+        document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+    }, 100);
+};
