@@ -1,0 +1,44 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.area1, .area2, .area3 {
+    visibility: hidden;
+}
+
+.foto{
+  transition: transform 0.5s ease-out;
+}
+
+.foto:hover{
+  transform: scale(1.08);
+}
+
+
+.wpp-btn {
+    position: fixed;
+    border-radius: 1rem;
+    animation-name: seta;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: 100;
+  }
+  
+  .wpp-btn img {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(1px 1px 2px #888);
+  
+  }
+  
+  @keyframes seta {
+    0% {
+      bottom: 40px;
+    }
+  
+    100% {
+      bottom: 70px;
+    }
+  }

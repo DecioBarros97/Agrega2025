@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="images/logo.png" type="image/ico" />
+    <script src="src/js/head.js"></script>
+    <title>Agrega</title>
+</head>
+
+<body>
+
+    <nav
+        class="sticky bg-white dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+
+            <a href="#home" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="/images/logo.png" class="foto h-8" alt="Agrega Logo">
+                <span
+                    class="foto hidden sm:block sm:text-xl md:text-2xl text-2xl font-semibold whitespace-nowrap dark:text-white">
+                    Agrega Irrigação</span>
+            </a>
+
+            <div class="flex md:order-2 space-x-3 md:space-x-1 rtl:space-x-reverse">
+
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+                <a href="https://app.agregaon.com.br/login?redirect=%2F" target="_blank" rel="noopener noreferrer"
+                    class="foto text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
+                    Entrar
+                </a>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="#home"
+                            class="block py-2 px-3 text-white bg-green-700 rounded-sm md:bg-transparent md:text-green-700 md:p-0 md:dark:text-gray-400"
+                            aria-current="page">
+                            Início</a>
+                    </li>
+                    <li>
+                        <a href="#products"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Produtos</a>
+                    </li>
+                    <li>
+                        <a href="#about"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#contact"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- HOME -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center shadow-lg">
+
+
+        <!-- Vídeo de fundo     -->
+        <video class="absolute top-0 left-0 w-full h-full object-cover  " autoplay muted loop poster="/images/02.png">
+            <source src="/video/back3.mp4" type="video/mp4">
+        </video>
+
+
+        <!-- Conteúdo da Section -->
+        <div class="relative text-white text-center ">
+            <img class="foto area1 w-64 mx-auto rounded-lg shadow-lg" src="/images/AgregaBranco.png" alt="Agrega">
+            <h1 class="area2 text-3xl font-bold mt-4">Gerenciamento de irrigação</h1>
+            <p class="area3 text-2xl mt-2 tracking-widest md:tracking-widefont-light">com presença em campo</p>
+        </div>
+    </section>
+
+
+    <section id="products" class="bg-white dark:bg-gray-900 shadow-lg">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+                <h2 class="area1 mb-4 text-4xl tracking-tight font-extrabold text-green-600 dark:text-white">
+                    Nossos produtos e serviços
+                </h2>
+                <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400"></p>
+            </div>
+
+
+            <div class=" grid gap-8 mb-6 lg:mb-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+                <div
+                    class="foto card1 bg-gray-100 border border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+
+                    <img class="rounded-t-lg shadow-lg w-full" src="/images/estacao.jpg" alt="" />
+
+                    <div class="p-5">
+
+                        <h5 class="text-2xl font-bold tracking-tight text-green-600 dark:text-white">
+                            Manejo de irrigação
+                        </h5>
+
+                        <p class="font-normal text-gray-700 dark:text-gray-400">
+                            Sistema online para auxiliar o produtor no campo, irrigando só o necessário. Consultores de
+                            campo experientes para melhor atender.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="foto card2 bg-gray-100 border border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+
+                    <img class="rounded-t-lg shadow-lg w-full" src="/images/clima.PNG" alt="" />
+
+                    <div class="p-5">
+
+                        <h5 class="mb-2 text-xl font-bold tracking-tight text-green-600 dark:text-white">
+                            Avaliação e redimensionamento de equipamentos
+                        </h5>
+
+                        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">
+                            Avaliação completa do equipamento com medição de velocidade, pressurização em todos os
+                            pontos, análise da lâmina de aplicação de água.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="foto card3 bg-gray-100 border border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+
+                    <img class="rounded-t-lg shadow-lg" src="/images/sistema3.jpg" alt="" />
+
+                    <div class="p-5">
+
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-green-600 dark:text-white">
+                            Laudos e fichas técnicas</h5>
+
+                        <p class="mb-16 font-normal text-gray-700 dark:text-gray-400">
+                            Emissão de laudo completo do equipamento para adequadas ações a tomar, lâmina aplicada,
+                            redimensionamento caso necessário e de acordo com o orçamento do cliente.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div
+                    class="foto card4 bg-gray-100 border border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+
+                    <img class="rounded-t-lg shadow-lg" src="/images/projeto.jpg" alt="" />
+
+                    <div class="p-5">
+
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-green-600 dark:text-white">
+                            Projetos de Engenharia</h5>
+
+                        <p class="mb-16 font-normal text-gray-700 dark:text-gray-400">
+
+                            Elaboração do projeto ideal para a área, com cenários que se adequam mais a realidade do
+                            produtor, custo da irrigação futura de acordo com a potência, consumo hídrico, auxílio no
+                            projeto energético junto a concessionária, ambiental (volumes a captar, vazão outorgada
+                            ideal).
+                        </p>
+
+                    </div>
+                </div>
+
+                <div
+                    class="foto card5 bg-gray-100 border border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+
+                    <img class="rounded-t-lg shadow-lg" src="/images/energia3.png" alt="" />
+
+                    <div class="p-5">
+
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-green-600 dark:text-white">
+                            Energia elétrica</h5>
+
+                        <p class="mb-16 font-normal text-gray-700 dark:text-gray-400">
+                            Realização de pedido de desconto do irrigante noturno, análise de contas de energia,
+                            adequação de demanda ativa, contratos de Demanda de geração, estudo energético, viabilidade
+                            de projeto.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div
+                    class="foto card6 bg-gray-100 border border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+
+                    <img class="rounded-t-lg shadow-lg" src="/images/relatorio3.png" alt="" />
+
+                    <div class="p-5">
+
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-green-600 dark:text-white">
+                            Relatórios</h5>
+
+                        <p class="mb-16 font-normal text-gray-700 dark:text-gray-400">
+                            Relatório de custo da safra, do ano, relatório energético mensal, relatório climático,
+                            auxílio no escalonamento de plantio.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="bg-green-100 dark:bg-gray-800 shadow-lg">
+
+
+        <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+            <h2 class="area1 pt-16 mb-4 text-4xl tracking-tight font-extrabold text-green-600 dark:text-white">
+                Sobre a Agrega Irrigação
+            </h2>
+            <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400"></p>
+        </div>
+        <div
+            class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:pb-16 lg:px-6">
+
+            
+            <div class="card3 mt-4 md:mt-0">
+                <h2 class=" mb-4 text-4xl tracking-tight font-extrabold text-green-600 dark:text-white">
+                    Equipe comprometida</h2>
+                <p class="mb-6 font-light text-gray-800 md:text-lg dark:text-gray-400">
+                    Com a Lilian e André Cortez à frente, atendemos mais de 20.000 hectares na região de Unaí MG em
+                    grandes clientes irrigantes além de diversos projetos de irrigação.</p>
+            </div>
+            <img class="foto card2 w-full dark:hidden rounded-lg shadow-lg" src="/images/equipe.jpg" alt="dashboard image">
+            <img class="foto card2 w-full hidden dark:block rounded-lg shadow-lg" src="/images/equipe.jpg"
+                alt="equipe">
+        </div>
+
+        <div
+            class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 flex flex-col md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+            
+            <div class="card2 mt-4 md:mt-0">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-green-600 dark:text-white">
+                    Presença no campo</h2>
+                <p class="mb-6 font-light text-gray-800 md:text-lg dark:text-gray-400">
+                    Estamos presentes ao longo do ciclo da cultura para garantir a melhor performance possível, fazendo
+                    parte de todo processo e participando ativamente das decisões.</p>
+            </div>
+            <img class="foto card3 w-full dark:hidden rounded-lg shadow-lg" src="/images/ceo.png" alt="dashboard image">
+            <img class="foto card3 w-full hidden dark:block rounded-lg shadow-lg" src="/images/ceo.png"
+                alt="campo">
+
+
+        </div>
+
+        <div
+            class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+           
+            <div class="card3 mt-4 md:mt-0">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-green-600 dark:text-white">
+                    Programadores Próprios</h2>
+                <p class="mb-6 font-light text-gray-800 md:text-lg dark:text-gray-400">
+                    Nosso sistema é personalizável para o cliente produtor rural e o cliente consultor de irrigação.
+                    Toda a estrutura técnica e de conhecimento para ser moldada foi desenvolvida pelo parceiro Malbos
+                    Representações, representada pelo Alan Malbos, programador com mais de 10 anos de experiência em
+                    programação de sistemas WEB. Junto a Malbos, temos um grande parceiro, a Empresa Souldev
+                    Desenvolvimento de Sistemas, em que seu CTO tem mais de 20 anos de experiência na área de
+                    programação. Junto a Malbos atendem o sistema AgregaON em todas demandas e dão suporte exclusivo as
+                    Empresas parceiras. Com a Malbos e a Souldev, conseguimos trazer novas ferramentas e manter o
+                    sistema sempre atualizado e confiável!</p>
+            </div>
+            <img class="foto card2 w-full dark:hidden rounded-xl shadow-lg" src="/images/bico.jpg" alt="dashboard image">
+            <img class="foto card2 w-full hidden dark:block rounded-xl shadow-lg" src="/images/bico.jpg"
+                alt="programadores">
+        </div>
+    </section>
+
+
+    <section class="bg-white dark:bg-gray-900 shadow-lg">
+        <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+            <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h2 class="area1 mb-4 text-4xl tracking-tight font-extrabold text-green-600 dark:text-white">
+                    Consultor, venha usar a ferramenta Agrega!</h2>
+                <p class="area2 mb-4">Você, consultor de irrigação ou que tenha vontade de usar nosso sistema em sua
+                    consultoria, temos a modalidade de oferecer a ferramenta para o seu dia-a-dia com o cliente! Entre
+                    em contato para conhecer mais. A Empresa Justino Irrigação utiliza a ferramenta desde 2021 e, com
+                    19.000 hectares de atendimento em São Paulo e Mato Grosso do Sul, é referência na região.
+                </p>
+                <p class="area3">O sistema é personalizado para a Justino Irrigação, com o logo, trazendo mais autonomia
+                    ao trabalho!
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mt-8">
+                <img class="equipe2 w-full rounded-lg" src="/images/justino.jpg" alt="Justino">
+                <img class="equipe2 mt-4 w-full lg:mt-10 rounded-lg" src="/images/justinosistema.PNG" alt="sistema">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class=" bg-green-100 dark:bg-gray-800 shadow-lg">
+        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+            <h2 class="area1 mb-4 text-4xl tracking-tight font-extrabold text-center text-green-600 dark:text-white">
+                Entre em
+                contato
+            </h2>
+            <p class="area2 mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Em casos
+                de
+                dúvidas, orçamentos ou parcerias entre em contato através do <br> Email ou Whatsapp.
+            </p>
+            <form action="https://getform.io/f/bxowyxqa" method="POST" class="card2 space-y-8">
+                <div>
+                    <label for="email"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                    <input type="email" name="email" id="email" required
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        placeholder="Seu email">
+                </div>
+                <div>
+                    <label for="subject"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Assunto</label>
+                    <input type="text" name="subject" id="subject" required
+                        class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        placeholder="Deixe-nos saber como podemos ajudá-lo">
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Sua
+                        mensagem</label>
+                    <textarea name="message" id="message" rows="6" required
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Deixe um comentário..."></textarea>
+                </div>
+                <button type="submit"
+                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </section>
+
+
+    <footer class="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-900 shadow-lg">
+        <div class="mx-auto max-w-screen-xl text-center">
+            <a href="#home"
+                class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
+
+                <img src="/images/logo.png" class="h-8 mr-2" alt="Agrega Logo">
+
+                Agrega Irrigação
+            </a>
+
+            <p class="my-6 text-gray-500 dark:text-white">
+                Somos especialistas em soluções de irrigação, oferecendo qualidade e inovação para seu projeto.</p>
+            <div class="max-w-screen-xl mx-auto px-5 grid md:grid-cols-3 lg:grid-cols-3 gap-6 text-center md:text-left">
+                <!-- Contato -->
+                <div class="text-left">
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                        Contato</h3>
+                    <a href="https://www.google.com/maps/place/AgregaON+Irriga%C3%A7%C3%A3o/@-16.3612668,-46.9002311,15z/data=!4m15!1m8!3m7!1s0x9357ab937a69826f:0x1e2c65ff26e35c69!2zQWdyZWdhT04gSXJyaWdhw6fDo28!8m2!3d-16.3613289!4d-46.9004026!10e5!16s%2Fg%2F11r_v42yq8!3m5!1s0x9357ab937a69826f:0x1e2c65ff26e35c69!8m2!3d-16.3613289!4d-46.9004026!16s%2Fg%2F11r_v42yq8?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" class="text-gray-400 text-sm">
+                        📍 Rua Nossa Sra. do Carmo, 224 - Unaí - MG.</a> <br>
+                    <a href="https://wa.me/+553899210366?text=Quero%20conhecer%20a%20Agrega!" target="_blank"
+                        class="text-gray-400 text-sm">
+                        📞 (38) 99921-0366</a>
+                    <p class="text-gray-400 text-sm">
+                        📩 <a href="mailto:lilian@agregairrigacao.com.br"
+                            class="hover:underline text-gray-400">lilian@agregairrigacao.com.br</a>
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        📩 <a href="mailto:andre@agregairrigacao.com.br"
+                            class="hover:underline text-gray-400">andre@agregairrigacao.com.br</a>
+                    </p>
+                </div>
+
+                <!-- Sobre a Empresa -->
+
+
+                <!-- Links Úteis -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Links Úteis</h3>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li><a href="#home" class="hover:text-green-400 transition">Início</a></li>
+                        <li><a href="#products" class="hover:text-green-400 transition">Produtos</a></li>
+                        <li><a href="#about" class="hover:text-green-400 transition">Sobre</a></li>
+                        <li><a href="#contact" class="hover:text-green-400 transition">Contato</a></li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Redes Sociais -->
+                <div class="md:col-span-3 flex justify-center mt-6">
+                    <div class="flex space-x-4 ">
+                        <a href="https://wa.me/+553899210366?text=Quero%20conhecer%20a%20Agrega!" target="_blank"
+                            class="text-gray-400 hover:text-green-400 transition text-2xl"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/agregairrigacao/" target="_blank"
+                            class="text-gray-400 hover:text-green-400 transition text-2xl"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-green-400 transition text-2xl"><i
+                                class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Linha de Copyright -->
+            <div class="text-center text-gray-500 text-sm mt-6 border-t border-gray-700 pt-4">
+                © 2025 Agrega Irrigação. Todos os direitos reservados.
+            </div>
+
+    </footer>
+
+
+
+    <!-- Botão Flutuante -->
+    <a href="https://wa.me/+553899210366?text=Quero%20conhecer%20a%20Agrega!" target="_blank"
+        class="foto wpp-btn fixed flex justify-center content-center bottom-4 right-6 bg-green-400 text-white p-3 w-20 h-20 rounded-full shadow-lg ">
+        <i class="fa-brands fa-whatsapp text-6xl "></i>
+    </a>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
+    <script src="src/js/script.js"></script>
+    <script src="src/js/scroll.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+
+
+
+
+</html>
